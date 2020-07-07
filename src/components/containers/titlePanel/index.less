@@ -1,0 +1,34 @@
+@import '../../common.less';
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  .title {
+    position: relative;
+    flex: none;
+    font-size: 18px;
+    // font-family: AlibabaPuHuiTi-Bold;
+    font-weight: bold;
+    padding: 16px;
+    color: @normal_color;
+    text-align: left;
+    .close{
+      float: right;
+      padding-top: 5px;
+      padding-right: 10px;
+      cursor: pointer;
+      &:hover{
+        color: @primary_color;
+      }
+
+    }
+  }
+
+  &:nth-child(2) {
+    flex: auto;
+  }
+}

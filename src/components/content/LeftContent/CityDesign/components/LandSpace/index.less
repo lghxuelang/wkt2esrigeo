@@ -1,0 +1,80 @@
+.layout {
+//   border: 1px solid red;
+  padding: 16px;
+
+  //   .itemHeader,
+  //   .itemBody {
+  //     border: 1px solid green;
+  //   }
+
+  .itemHeader {
+    height: 40px;
+    padding: 0 16px 0 8px;
+  }
+
+  .itemBody {
+    height: 40px;
+    padding: 0 16px;
+  }
+
+  //   .itemHeader span,
+  //   .itemBody span {
+  //     border: 1px solid blue;
+  //   }
+
+  .itemHeader,
+  .itemBody {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+}
+
+.font {
+  .itemHeader span {
+    font-size: 14px;
+    font-family: AlibabaPuHuiTi-Bold, AlibabaPuHuiTi;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 1);
+    line-height: 20px;
+  }
+
+  .itemBody span {
+    font-size: 14px;
+    font-family: AlibabaPuHuiTi-Regular, AlibabaPuHuiTi;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 20px;
+  }
+}
+
+.background {
+  .itemHeader {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .itemBody {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.intereact {
+  .itemBody {
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(0, 255, 249, 0.2);
+      border: 1px solid rgba(0, 255, 249, 0.7);
+    }
+
+  }
+}
+
+
+.landSpace {
+  .layout();
+  .font();
+  .background();
+  .intereact();
+}

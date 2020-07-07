@@ -1,0 +1,79 @@
+.panelWrap {
+  display: flex;
+  flex-direction: column;
+  pointer-events: all;
+  background: rgba(46,47,58,1);
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.38);
+  position: absolute;
+  top: 88px;
+  right: 90px;
+  width: 250px;
+  z-index: 999;
+}
+
+.panelWrap .panelHead {
+  flex: none;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  border-radius: 4px 4px 0 0;
+  background:rgba(46,47,58,1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 18px;
+}
+
+.panelWrap .panelHead span:nth-child(1) {
+  font-size:14px;
+  font-family:PingFangSC;
+  font-weight:300;
+  color: rgba(255,255,255,0.4);
+}
+
+.panelWrap .panelHead span:nth-child(2) {
+  color: rgba(255,255,255,0.4);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.panelWrap .panelContent {
+  flex: 1;
+  padding: 10px;
+  text-align: start;
+}
+.switchButton{
+  height: 46px;
+  text-align: center;
+}
+.switchRadio{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.switchRadioSpan1{
+  display: flex;
+  width:80px;
+  height:40px;
+  background:rgba(249,123,50,1);
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.switchRadioSpan2{
+  display: flex;
+  width:80px;
+  height:40px;
+  border:1px solid rgba(249,123,50,1);
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.imgIcon{
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}

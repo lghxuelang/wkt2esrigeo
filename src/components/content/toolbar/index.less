@@ -1,0 +1,128 @@
+.wapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 20;
+  display: flex;
+  align-items: flex-end;
+  .banner {
+    flex: 1;
+  }
+  .toolbar {
+    width: 580px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+    justify-content: space-around;
+    .active {
+      background-image: url(./images/模块-选中.png);
+      .city {
+        background-image: url(./images/城市概况-选中.png);
+      }
+      span {
+        color: rgba(0, 255, 249, 1);
+      }
+    }
+    > div {
+      width: 72px;
+      height: 112px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      &:hover {
+        background-image: url(./images/模块-选中.png);
+
+        .city {
+          background-image: url(./images/城市概况-选中.png);
+        }
+        .land {
+          background-image: url(./images/土地地块-选中.png);
+        }
+        .plan {
+          background-image: url(./images/建设计划-选中.png);
+        }
+        .urban {
+          background-image: url(./images/城市规划-选中.png);
+        }
+        .green {
+          background-image: url(./images/绿色建筑-选中.png);
+        }
+        .smart {
+          background-image: url(./images/智慧工地-选中.png);
+        }
+        .bim {
+          background-image: url(./images/BIM报建-选中.png);
+        }
+        span {
+          color: rgba(0, 255, 249, 1);
+        }
+      }
+      .item {
+        width: 56px;
+        height: 56px;
+        margin-top: 20px;
+        margin-bottom: 4px;
+      }
+      div{
+        background-position:  center; // 修复图标选中图片抖动，切图不一致
+      }
+      .city {
+        background-image: url(./images/城市概况.png);
+      }
+      .land {
+        background-image: url(./images/土地地块.png);
+      }
+      .plan {
+        background-image: url(./images/建设计划.png);
+      }
+      .urban {
+        background-image: url(./images/城市规划.png);
+      }
+      .green {
+        background-image: url(./images/绿色建筑.png);
+      }
+      .smart {
+        background-image: url(./images/智慧工地.png);
+      }
+      .bim {
+        background-image: url(./images/BIM报建.png);
+      }
+      span {
+        font-size: 14px;
+        width: 96px;
+        font-family: AlibabaPuHuiTi;
+        font-weight: bold;
+        color: rgba(255, 255, 255, 1);
+        line-height: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+  .model {
+    position: absolute;
+    right: 100px;
+    top: -5px;
+    display: flex;
+    span {
+      font-size: 14px;
+      width: 160px;
+      height: 40px;
+      line-height: 40px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      background-image: url(./images/框_未选中.png);
+      &:hover {
+        color: rgba(0, 252, 247, 1);
+        background-image: url(./images/框_选中.png);
+      }
+    }
+    .active {
+      color: rgba(0, 252, 247, 1);
+      background-image: url(./images/框_选中.png);
+    }
+  }
+}

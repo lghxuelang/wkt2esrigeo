@@ -1,0 +1,23 @@
+html, body, #root {
+  height: 100%;
+}
+
+/* 全局设置盒模型 */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  /* 全局字体设置 */
+  font-family: Helvetica Neue,Helvetica,Arial,Microsoft Yahei,Hiragino Sans GB,Heiti SC,WenQuanYi Micro Hei,sans-serif;
+  background: #000;
+}
+/* 去掉地图点击蓝色边框 */
+.esri-view .esri-view-surface--inset-outline:focus::after {
+  outline: auto 0px Highlight !important;
+  outline: auto 0px -webkit-focus-ring-color !important;
+}

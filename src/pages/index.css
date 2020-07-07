@@ -1,0 +1,118 @@
+.wrapper {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.viewContainer,
+.viewDiv {
+  flex: auto;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  position: relative;
+}
+.demo{
+  position: absolute;
+  top:70px;
+  right:20px;
+  background: blue;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+/* 覆盖Popup的样式 */
+
+:global(.esri-popup) {
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 30px 40px 0px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+:global(.esri-popup__main-container) {
+  width: 704px !important;
+  background-color: transparent;
+}
+
+:global(.esri-popup__header-title) {
+  font-size: 18px;
+  font-family: AlibabaPuHuiTi-Bold, AlibabaPuHuiTi;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 1);
+  line-height: 25px;
+  text-align: left;
+}
+
+:global(.esri-popup__header-title:hover) {
+  background-color: transparent;
+}
+
+:global(.esri-popup__button:hover) {
+  background-color: transparent;
+}
+
+:global(.esri-popup__header-buttons .esri-popup__button) {
+  border: 1px solid white;
+  padding: 2px;
+  color: white;
+}
+
+:global(.esri-popup__main-container .esri-widget) {
+  background-color: transparent;
+}
+
+:global(.esri-popup__main-container .esri-widget__table) {
+  font-size: 14px;
+  font-family: AlibabaPuHuiTi-Regular, AlibabaPuHuiTi;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 20px;
+}
+
+:global(.esri-popup__main-container .esri-widget__table tr) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  height: 36px;
+}
+
+:global(.esri-popup__pointer) {
+  display: none;
+}
+
+
+/* 四个边角实现 */
+:global(.esri-popup--shadow) {
+  border: 1px solid red;
+  padding: 32px;
+  border: 2px solid rgba(0,255,249,.8);
+}
+
+:global(.esri-popup--shadow::before) {
+  width: calc(100% + 64px + 4px - 120px);
+  height: calc(100% + 4px);
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  content: '';
+  position: absolute;
+  background: transparent;
+  border-top: 2px solid rgba(0, 0, 0, 0.8);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.8);
+}
+
+:global(.esri-popup--shadow::after) {
+  height: calc(100% + 64px + 4px - 120px);
+  width: calc(100% + 4px);
+  left: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  content: '';
+  position: absolute;
+  border-left: 2px solid rgba(0, 0, 0, 0.8);
+  border-right: 2px solid rgba(0, 0, 0, 0.8);
+}

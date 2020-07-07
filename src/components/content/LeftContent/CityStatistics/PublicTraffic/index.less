@@ -1,0 +1,120 @@
+.layout {
+  // border: 1px solid red !important;
+
+  margin-top: 32px;
+  height: calc(100% - 128px);
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 30px 4px 0px rgba(0, 0, 0, 0.5), 0px -2px 4px 0px rgba(255, 255, 255, 0.3);
+
+  // .titleWrap,
+  // .content {
+  //   border: 1px solid green;
+  // }
+
+  .titleWrap {
+    img {
+      width: 19px;
+      height: 19px;
+      border: 1px solid rgba(255, 255, 255, .4);
+      margin-right: 16px;
+    }
+  }
+
+  .content {
+    height: 733px;
+    margin: 0 16px;
+    padding-bottom: 56px;
+  }
+
+  // .chart1Container,
+  // .chart2 {
+  //   border: 1px solid blue;
+  // }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    .chart1Container {
+      flex: 2.3; // height:487px ;  
+    }
+
+    .chart2 {
+      flex: 1; // height:208px ;  
+    }
+  }
+
+  // .title,
+  // .chart1 {
+  //   border: 1px solid yellow;
+  // }
+
+  .chart1Container {
+    position: relative;
+
+    .title {
+      height: 54px;
+
+      display: flex;
+      justify-content: space-between;
+
+
+    }
+
+    .chart1 {
+      height: calc(~'100% - 54px');
+    }
+  }
+
+}
+
+.font {
+  .titleWrap {
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .chart1Container .title {
+    .peopleCount {
+      font-size: 14px;
+      font-family: AlibabaPuHuiTi-Regular, AlibabaPuHuiTi;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+      line-height: 20px;
+    }
+
+    :global(.ant-radio-button-wrapper) {
+      background: transparent;
+      font-size: 12px;
+      font-family: AlibabaPuHuiTi-Regular, AlibabaPuHuiTi;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+    }
+
+    :global(.ant-radio-button-wrapper:first-child) {
+      border-radius: 15px 0 0 15px;
+    }
+
+    :global(.ant-radio-button-wrapper:last-child) {
+      border-radius: 0 15px 15px 0;
+    }
+  }
+}
+
+.interact {
+  .chart1Container .title {
+    :global(.ant-radio-button-wrapper-checked) {
+      background: #00FFF8;
+      color: #222328;
+      border-color: #00FFF8;
+    }
+  }
+}
+
+.publicTraffic {
+  .layout();
+  .font();
+  .interact();
+}

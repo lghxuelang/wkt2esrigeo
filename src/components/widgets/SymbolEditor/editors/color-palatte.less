@@ -1,0 +1,27 @@
+.geomap-widget-colors__row {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  justify-content: space-between;
+
+  .geomap-widget-colors__item {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 2px;
+
+    &--selected {
+      border-color: #0079c1;
+    }
+
+    .swatch-item {
+      height: 16px;
+      width: 16px;
+      border-radius: 2px;
+      box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5);
+    }
+  }
+}

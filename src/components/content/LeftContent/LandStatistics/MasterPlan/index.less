@@ -1,0 +1,71 @@
+.wapper {
+  margin: 16px;
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    span {
+      font-size: 12px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+      text-align: left;
+      margin-bottom: 16px;
+      line-height: 18px;
+    }
+  }
+
+  .divide {
+    margin-top: 16px;
+    width: 368px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .sliderDiv {
+    margin-top: 24px;
+    .title {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+      font-weight: bold;
+      color: rgba(255, 255, 255, 1);
+      line-height: 20px;
+      margin-bottom: 24px;
+      span:nth-child(2){
+        width:56px;
+        height:24px;
+        border:1px solid rgba(255,255,255,0.5);
+      }
+    }
+
+    :global {
+      .ant-slider-track {
+        background-color: rgba(0, 255, 249, 1) !important;
+        height: 1px !important;
+      }
+      .ant-slider-step {
+        height: 1px !important;
+      }
+      .ant-slider-rail {
+        height: 1px !important;
+      }
+      .ant-slider-dot-active {
+        display: none;
+      }
+      .ant-slider-dot {
+        display: none;
+      }
+      .ant-slider-handle {
+        border: none !important;
+        background: radial-gradient(circle, #00fff9, white) !important;
+        height: 20px !important;
+        width: 20px !important;
+        margin-top: -10px !important;
+      }
+      .ant-slider-mark {
+        margin-top: 10px;
+      }
+    }
+  }
+
+}

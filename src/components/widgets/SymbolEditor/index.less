@@ -1,0 +1,377 @@
+@import '../../common';
+
+.editor-title {
+  font-size: 18px;
+  color: @foreground-color;
+  line-height: 18px;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.geomap-widget-symbol-editor {
+  display: flex;
+  flex-direction: column;
+  color: @foreground-color;
+  height: 100%;
+
+  &__header {
+    flex: none;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-bottom: 1px solid #eee;
+
+    &-cancel {
+      width: 30px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: @foreground-color;
+      cursor: pointer;
+      &:hover {
+        background: @hover_background;
+      }
+    }
+    &-text {
+      text-align: left;
+      padding-left: 20px;
+
+      > div:nth-child(1) {
+        //opacity: 0.8;
+        font-size: 18px;
+      }
+      > div:nth-child(2) {
+        opacity: 0.7;
+        font-size: 12px;
+      }
+    }
+  }
+  &__footer {
+    flex: none;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+
+    > button {
+      width: 120px;
+      font-size: 16px;
+      color: white;
+      background-color: transparent;
+      border: 1px solid #555;
+      cursor: pointer;
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+    > button:nth-child(1) {
+      background: #7cc03d;
+      &:hover {
+        background-color: #7cc03d;
+      }
+    }
+  }
+  &__renders {
+    &-item {
+      margin: 15px;
+      height: 180px;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      border: 3px solid #ddd;
+      cursor: pointer;
+
+      &.active {
+        border-color: #3285ff;
+      }
+
+      &-logo {
+        flex: auto;
+        background-size: cover;
+        text-align: left;
+
+        .anticon {
+          margin: 6px;
+          font-size: 24px;
+        }
+
+        &.simple.point {
+          background-image: url(./images/Simple.png);
+        }
+        &.simple.polyline {
+          background-image: url(./images/SimpleL.png);
+        }
+        &.simple.polygon {
+          background-image: url(./images/SimpleFill.png);
+        }
+        &.unique-value.point {
+          background-image: url(./images/CategoricalPoints-150.png);
+        }
+        &.unique-value.polyline {
+          background-image: url(./images/CategoricallLines-150.png);
+        }
+        &.unique-value.polygon {
+          background-image: url(./images/CategoricalAreas3-150.png);
+        }
+        &.class-break.point {
+          background-image: url(./images/ChoroplethPoints-150.png);
+        }
+        &.class-break.polyline {
+          background-image: url(./images/ChoroplethLines-150.png);
+        }
+        &.class-break.polygon {
+          background-image: url(./images/ChoroplethAreas-150.png);
+        }
+        &.white-scene {
+          background-image: url(./images/WhiteScene.png);
+        }
+        &.material-scene {
+          background-image: url(./images/MaterialScene.png);
+        }
+        &.water {
+          background-image: url(./images/water.jpg);
+        }
+        &.sketch {
+          background-image: url(./images/sketch.png);
+        }
+        &.billboard {
+          background-image: url(./images/ad.png);
+        }
+      }
+
+      &-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 32px;
+        padding: 0 10px;
+      }
+
+      &-conf {
+        color: #3285ff;
+        cursor: pointer;
+
+        .anticon {
+          margin-right: 6px;
+        }
+      }
+
+      &-info {
+        .anticon {
+          margin-left: 6px;
+        }
+      }
+    }
+  }
+  &__content {
+    flex: auto;
+    margin-top: 20px;
+    padding: 0 0 20px 15px;
+  }
+  &__styling {
+    &-title:extend(.editor-title) {
+    }
+    &-switch {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 40px;
+      padding: 0 10px;
+    }
+
+    &-row {
+      display: flex;
+      align-items: center;
+      height: 40px;
+      &-label {
+        width: 120px;
+        text-align: center;
+        font-size: 14px;
+        color: @foreground-color;
+      }
+      &-wrap {
+        flex: auto;
+        display: flex;
+        align-items: center;
+      }
+      &-btn {
+        height: 32px;
+        width: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid @foreground-color;
+        color: @foreground-color;
+        font-size: 14px;
+        margin-right: 20px;
+        cursor: pointer;
+        &.active {
+          color: #3285ff;
+          border-color: #3285ff;
+        }
+      }
+    }
+    &-edge-btn {
+      position: relative;
+      .anticon {
+        position: absolute;
+        right: -6px;
+        top: -6px;
+        font-size: 20px;
+      }
+    }
+    &-color-border {
+      border: 1px solid @foreground-color;
+      background: white;
+      padding: 5px;
+      cursor: pointer;
+      width: 80px;
+      height: 32px;
+      display: flex;
+    }
+    &-color-stub {
+      border: 3px solid @foreground-color;
+      flex: auto;
+    }
+  }
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+
+    &-text:extend(.editor-title) {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    &-zoom {
+      height: 18px;
+      width: 18px;
+      font-size: 18px;
+      color: @foreground-color;
+      cursor: pointer;
+    }
+  }
+  &__fields {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+
+    &-text:extend(.editor-title) {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    &-add {
+      font-size: 18px;
+      color: @foreground-color;
+      cursor: pointer;
+    }
+  }
+  &__fields-selected {
+    text-align: left;
+    font-size: 16px;
+    padding: 0 15px;
+
+    > span {
+      display: block;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 6px 10px;
+    }
+  }
+  &__elevation {
+    &-title:extend(.editor-title) {
+    }
+    &-select {
+      &-row {
+        display: flex;
+        align-items: center;
+      }
+      &-label {
+        flex: none;
+        width: 120px;
+        font-size: 14px;
+        color: @foreground-color;
+      }
+      .ant-select {
+        width: 180px;
+        .ant-select-selection-item {
+          text-align: left;
+        }
+      }
+    }
+    &-offset {
+      display: flex;
+      align-items: center;
+
+      &-label {
+        flex: none;
+        width: 120px;
+        font-size: 14px;
+        color: @foreground-color;
+      }
+
+      .ant-input {
+        width: 67px;
+      }
+
+      .ant-select {
+        margin-left: 15px;
+      }
+    }
+    &-options {
+      margin-top: 10px;
+
+      & .ant-select {
+        //margin-left: 20px;
+      }
+    }
+  }
+  &__outline {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin-right: 30px;
+
+    &-slider {
+      flex: auto;
+      margin: 0 8px;
+    }
+    &-input {
+      flex: none;
+      width: 50px;
+    }
+  }
+  &__opacity {
+    &-title:extend(.editor-title) {
+    }
+    &-content {
+      margin-top: 10px;
+      padding: 0 20px;
+
+      .ant-slider {
+      }
+    }
+  }
+  &__wave {
+    &-title:extend(.editor-title) {
+    }
+    &-content {
+      margin-top: 10px;
+      padding: 0 20px;
+
+      .ant-slider {
+      }
+    }
+  }
+}

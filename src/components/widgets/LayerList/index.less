@@ -1,0 +1,351 @@
+import '../../common';
+
+:global {
+  @keyframes looping-progress-bar-ani {
+    0% {
+      left: 0%;
+      width: 0%;
+    }
+
+    20% {
+      left: 0%;
+      width: 20%;
+    }
+
+    80% {
+      left: 80%;
+      width: 20%;
+    }
+
+    100% {
+      left: 100%;
+      width: 0%;
+    }
+  }
+
+
+  .geomap-widget-layer-list {
+    width: 300px;
+    color: @normal_color;
+    background-color: transparent;
+    border: @border_style;
+    padding: 6px 7px;
+    font-size: 14px;
+    display: flex;
+    flex-flow: column;
+    box-shadow: @panel_shadow;
+
+    box-sizing: border-box;
+    line-height: 1.3em;
+
+    pointer-events: auto;
+
+    .geomap-widget-layer-list__noop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+    }
+
+    .geomap-widget-layer-list__item-container {
+      border-left: 3px solid transparent;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 12px 7px 12px 20px;
+      transition: border-color 250ms ease-in-out;
+
+      .label {
+        margin: 0 7px;
+      }
+    }
+
+    .geomap-widget-layer-litem__item {
+      background-color: transparent;
+      border: 1px solid rgba(110, 110, 110, 0.3);
+      position: relative;
+      overflow: hidden;
+      list-style: none;
+      margin: 3px 0;
+      padding: 0;
+      &:hover,
+      &:focus {
+        border-color: @primary_color;
+      }
+      &[class^='esri-icon'] {
+        padding-right: 2.8px;
+      }
+    }
+
+    .geomap-widget-layer-list__label {
+      display: flex;
+      flex-flow: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex: 1;
+      &[role='checkbox']:hover,
+      &[role='radio']:hover {
+        cursor: pointer;
+      }
+    }
+
+    .geomap-widget-layer-list__item-children {
+      padding-bottom: 6px;
+    }
+    .geomap-widget-layer-list__item-selectable .geomap-widget-layer-list__item-container {
+      cursor: pointer;
+      &:hover {
+        border-left-color: rgba(110, 110, 110, 0.3);
+      }
+    }
+
+    .geomap-widget-layer-list__child-toggle {
+      color: @primary_color;
+      width: 15px;
+      cursor: pointer;
+      & [class*='esri-icon'] {
+        line-height: 1.2em;
+      }
+
+      & .childOpened,
+      & .childClosed_RTL,
+
+
+      .geomap-widget-layer-list__child-toggle-open .geomap-widget-layer-list__child-closed {
+        display: none;
+      }
+
+      .geomap-widget-layer-list__child-toggle-open .geomap-widget-layer-list__child-opened {
+        display: block;
+      }
+    }
+
+    .geomap-widget-layer-list__title {
+      //flex: 1;
+      padding-left: 5px;
+      padding-right: 5px;
+      line-height: 1.3em;
+      word-break: break-word;
+      overflow-wrap: break-word;
+      transition: color 125ms ease-in-out;
+    }
+
+    .geomap-widget-layer-list__toggle-visible {
+      padding: 0 3px;
+      cursor: pointer;
+      color: @primary_color;
+    }
+
+    .geomap-widget-layer-list__item-updating:before,
+    .geomap-widget-layer-list__item-updating:after {
+      content: '';
+      opacity: 1;
+      position: absolute;
+      height: 2px;
+      top: 0;
+      transition: opacity 500ms ease-in-out;
+    }
+    .geomap-widget-layer-list__item-updating:before {
+      background-color: rgba(110, 110, 110, 0.3);
+      width: 100%;
+      z-index: 0;
+    }
+    .geomap-widget-layer-list__item-updating:after {
+      background-color: #6e6e6e;
+      width: 20%;
+      z-index: 0;
+      animation: looping-progress-bar-ani 1500ms linear infinite;
+    }
+    .geomap-widget-layer-list__custom-actions-icon {
+      color: @primary_color;
+    }
+
+    .geomap-widget-layer-list__list {
+      list-style: none;
+      margin: 0 0 0 15px;
+      padding: 0;
+    }
+
+    .geomap-widget-layer-list__list-root {
+      margin: 0;
+    }
+  }
+}
+
+.panel {
+  top: 20px;
+  width: 220px;
+  .container {
+    max-height: 460px;
+    padding: 10px 0;
+    overflow-y: auto;
+    // 滚动条
+    &::-webkit-scrollbar-track
+    {
+        background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar
+    {
+        width: 6px;
+        background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar-thumb
+    {
+        background-color: #c1c1c1;
+    }
+      // end滚动条样式
+
+    .item {
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .title {
+        span {
+          display: inline-block;
+          vertical-align: middle;
+          width: 96px;
+          margin-left: 8px;
+          color: rgba(153, 153, 153, 1);
+          line-height: 16px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+      :global {
+        .ant-switch {
+          height: 18px;
+          line-height: 1;
+          width: 35px;
+          min-width: 35px;
+        }
+        .ant-switch-loading-icon,
+        .ant-switch::after {
+          top: 2px;
+          right: 5px;
+          width: 11px;
+          height: 11px;
+        }
+        .ant-switch-checked {
+          background-color: #49e5e2;
+        }
+      }
+    }
+  }
+}
+
+
+.addedlist {
+  height: 164px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 0 15px 10px;
+
+  .item {
+    height: 26px;
+    background-color: rgba(249,109,27,0.3);
+    color: white;
+    border-radius: 5pxtreewrap;
+  }
+}
+
+.treewrap {
+  height: 300px;
+  padding: 10px 0 15px 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  div:nth-child(1){
+    div:nth-child(1){
+      //overflow-y: scroll !important;
+      //overflow-x: auto !important;
+    }
+  }
+
+  .tree {
+    height: 270px;
+    color: white !important;
+
+    & li :global(.ant-tree-node-content-wrapper) {
+      color: rgba(255, 255, 255, 1) !important;
+      width: calc(95% - 46px);
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    & :global(.ant-tree-checkbox-indeterminate) {
+      & :global(.ant-tree-checkbox-inner)::after {
+        background-color: rgba(249, 109, 27, 1);
+      }
+    }
+
+    & :global(.ant-tree-checkbox) {
+      float: left;
+
+      & :global(.ant-tree-checkbox-inner) {
+        background-color: transparent;
+        border: 1px solid rgba(249, 109, 27, 1);
+        border-radius: 3px;
+      }
+      &:hover :global(.ant-tree-checkbox-inner) {
+        border-color: rgba(249, 109, 27, 1);
+      }
+    }
+
+    & :global(.ant-tree-checkbox-checked) {
+
+      &::after {
+        border: none !important;
+      }
+
+      & :global(.ant-tree-checkbox-inner) {
+        background-color: rgba(249, 109, 27, 1);
+      }
+    }
+  }
+  .tree2nd {
+    height: 230px;
+    color: white !important;
+
+    & li :global(.ant-tree-node-content-wrapper) {
+      color: rgba(255, 255, 255, 1) !important;
+      width: calc(95% - 46px);
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    & :global(.ant-tree-checkbox-indeterminate) {
+      & :global(.ant-tree-checkbox-inner)::after {
+        background-color: rgba(249, 109, 27, 1);
+      }
+    }
+
+    & :global(.ant-tree-checkbox) {
+      float: left;
+
+      & :global(.ant-tree-checkbox-inner) {
+        background-color: transparent;
+        border: 1px solid rgba(249, 109, 27, 1);
+        border-radius: 3px;
+      }
+      &:hover :global(.ant-tree-checkbox-inner) {
+        border-color: rgba(249, 109, 27, 1);
+      }
+    }
+
+    & :global(.ant-tree-checkbox-checked) {
+
+      &::after {
+        border: none !important;
+      }
+
+      & :global(.ant-tree-checkbox-inner) {
+        background-color: rgba(249, 109, 27, 1);
+      }
+    }
+  }
+}

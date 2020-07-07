@@ -1,0 +1,195 @@
+@import '../../common.less';
+
+.geomap-widget-layer-catalog {
+  &__bar {
+    padding: 3px 6px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    &-text {
+      font-size: 14px;
+      color: @foreground-color;
+    }
+
+    &-actions {
+      display: flex;
+      align-items: center;
+    }
+    &-action {
+      margin: 3px;
+      height: 16px;
+      width: 16px;
+      color: @foreground-color;
+      opacity: 0.7;
+      &:hover {
+        opacity: 1;
+      }
+      &.active {
+        opacity: 1;
+        color: @selected-color;
+      }
+    }
+  }
+
+  &__tree {
+    background: transparent;
+    color: @foreground-color;
+
+    &-node {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &-icon {
+        height: 18px;
+        width: 18px;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      &-text {
+        flex: auto;
+        color: @foreground-color;
+        margin-right: 10px;
+        margin-left: 8px;
+        overflow: hidden;
+      }
+      &-actions {
+        display: flex;
+        align-items: center;
+      }
+      &-action {
+        margin: 0 3px;
+        display: none;
+      }
+      &:hover &-action {
+        display: unset;
+      }
+    }
+
+    .ant-tree-treenode-disabled .ant-tree-node-content-wrapper {
+      color: @foreground-color;
+    }
+
+    .ant-tree-node-content-wrapper {
+      text-align: left;
+      &:hover {
+        background-color: @hover_background;
+      }
+    }
+  }
+
+  &__collapse {
+    margin-left: 15px;
+
+    &-content {
+      background: @background-color;
+    }
+    &-node-item {
+      height: 32px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      span:first-child {
+        height: 17px;
+        font-size: 16px;
+        font-family: Microsoft YaHei;
+        font-weight: 400;
+        color: @foreground-color;
+        line-height: 18px;
+      }
+    }
+    &-node-switch {
+      margin-left: auto;
+      display: block;
+      align-items: center;
+
+      .ant-switch {
+        border-color: @foreground-color;
+      }
+    }
+
+    .ant-collapse {
+      color: @foreground-color;
+      background-color: transparent;
+      border: none;
+    }
+    .ant-collapse > .ant-collapse-item {
+      border-bottom: none !important;
+    }
+
+    .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+      color: @foreground-color !important;
+      padding: 0;
+      padding-left: 0;
+      line-height: 32px;
+      font-size: 16px;
+      text-align: left;
+    }
+
+    .ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow {
+      left: unset;
+      right: 0;
+      font-size: 18px;
+      line-height: 18px;
+    }
+
+    .ant-collapse-content {
+      background-color: transparent !important;
+      color: @foreground-color !important;
+    }
+    .ant-collapse-content {
+      border: none !important;
+    }
+    .ant-collapse-content > .ant-collapse-content-box {
+      padding: 0 0 0 15px;
+    }
+  }
+}
+
+.geomap-widget-ground-opacity {
+  background: @background-color;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+
+  &__title {
+    flex: none;
+    font-size: 18px;
+    color: @foreground-color;
+    position: relative;
+  }
+
+  &__slider {
+    flex: auto;
+    margin-left: 15px;
+  }
+
+  &__switch {
+    flex: none;
+    margin-left: 15px;
+  }
+}
+
+.geomap-widget-layer-context {
+  box-shadow: 0 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+
+  &__item {
+    height: 24px !important;
+    line-height: 24px !important;
+
+    img {
+      height: 18px;
+      width: 18px;
+      margin-right: 10px;
+    }
+  }
+}

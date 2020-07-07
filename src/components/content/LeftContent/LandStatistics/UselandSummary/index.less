@@ -1,0 +1,178 @@
+.layout {
+  // border: 1px solid red !important;
+  padding: 16px 16px 0 16px;
+  height: 692px;
+
+  // .chartDiv,
+  // .table {
+  //   border: 1px solid green !important;
+  // }
+
+  display: flex;
+  flex-direction: column;
+
+  .chartDiv {
+    flex: 1; // 257px
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .table {
+    flex: 1.587; // 408px;
+    margin-top: 16px;
+  }
+
+
+
+  .chartDiv {
+    position: relative;
+
+    .exportExcel {
+      position: absolute;
+      left: 52px;
+      bottom: 40px;
+      border: 1px solid rgba(0, 255, 249, 1);
+      padding: 4px 10px;
+      z-index: 1;
+      cursor: pointer;
+    }
+  }
+
+  .table {
+    .tableHeader {
+      height: 40px;
+      padding: 0 8px;
+
+      display: flex;
+      align-items: center;
+
+      span:nth-child(1) {
+        flex: 2.3; // 168px
+        text-align: left;
+      }
+
+      span:nth-child(2) {
+        flex: 1.52; // 111px
+        text-align: left;
+      }
+
+      span:nth-child(3) {
+        flex: 1; // 73px
+        text-align: left;
+      }
+
+    }
+
+    .tableBody {
+      .item {
+        height: 40px;
+        padding: 0 8px;
+
+        display: flex;
+        align-items: center;
+
+
+        span:nth-child(1) {
+          flex: 2.3; // 168px
+          text-align: left;
+        }
+
+        span:nth-child(2) {
+          flex: 1.52; // 111px
+          text-align: left;
+        }
+
+        span:nth-child(3) {
+          flex: 1; // 73px
+          text-align: left;
+        }
+      }
+    }
+  }
+
+
+}
+
+.font {
+  .chartDiv {
+    .exportExcel {
+      font-size: 12px;
+      font-family: AlibabaPuHuiTi-Regular, AlibabaPuHuiTi;
+      font-weight: 400;
+      color: rgba(0, 255, 249, 1);
+      line-height: 17px;
+    }
+  }
+
+  .tableHeader {
+    span {
+      font-size: 14px;
+      font-family: AlibabaPuHuiTi-Regular, AlibabaPuHuiTi;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+      line-height: 20px;
+    }
+  }
+
+  .tableBody {
+    .item {
+      font-size: 14px;
+      font-family: AlibabaPuHuiTi-Regular, AlibabaPuHuiTi;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+      line-height: 20px;
+    }
+  }
+}
+
+.background {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.interact {
+  .tableBody .item:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+}
+
+.wrapper {
+  .layout();
+  .font();
+  .interact();
+
+  .table {
+    .background();
+    overflow-y: auto;
+
+    .tableBody {
+      :global(.ant-collapse) {
+        background-color: transparent;
+        border: none;
+      }
+
+      :global(.ant-collapse-item) {
+        border-bottom: none;
+
+        :global(.ant-collapse-header) {
+          padding: 0;
+        }
+
+        :global(.ant-collapse-content) {
+          background-color: transparent;
+          border-top: none;
+        }
+
+        :global(.ant-collapse-content-box) {
+          padding: 0;
+        }
+      }
+
+      :global(.ant-collapse-item-active .ant-collapse-header) {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+
+  }
+}

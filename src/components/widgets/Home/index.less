@@ -1,0 +1,19 @@
+.wrap {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+
+.btn:global(.disabled) {
+  cursor: no-drop;
+}
+

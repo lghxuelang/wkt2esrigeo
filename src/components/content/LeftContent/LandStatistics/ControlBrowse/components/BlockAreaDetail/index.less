@@ -1,0 +1,162 @@
+.layout {
+  //   border: 1px solid red;
+  height: 100%;
+  padding: 0 8px 30px 8px;
+
+//   .return,
+//   .tableContainer {
+//     border: 1px solid green;
+//   }
+
+  .return {
+    height: 52px;
+  }
+
+  .tableContainer {
+    height: calc(~'100% - 52px');
+  }
+
+  .return {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    img {
+      width: 12px;
+      height: 12px;
+      margin-right: 5px;
+    }
+  }
+
+  .tableContainer {
+    .tableHeader {
+      height: 40px;
+      padding: 0 8px;
+
+      display: flex;
+      align-items: center;
+
+      span:nth-child(1) {
+        flex: 2.3; // 168px
+        text-align: left;
+      }
+
+      span:nth-child(2) {
+        flex: 1.52; // 111px
+        text-align: left;
+      }
+
+      span:nth-child(3) {
+        flex: 1; // 73px
+        text-align: left;
+      }
+
+    }
+
+    .tableBody {
+      .item {
+        height: 40px;
+        padding: 0 8px;
+
+        display: flex;
+        align-items: center;
+
+
+        span:nth-child(1) {
+          flex: 2.3; // 168px
+          text-align: left;
+        }
+
+        span:nth-child(2) {
+          flex: 1.52; // 111px
+          text-align: left;
+        }
+
+        span:nth-child(3) {
+          flex: 1; // 73px
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+.font {
+  .return span {
+    font-size: 14px;
+    font-family: AlibabaPuHuiTi-Regular, AlibabaPuHuiTi;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 20px;
+  }
+
+  .tableHeader {
+    span {
+      font-size: 14px;
+      font-family: AlibabaPuHuiTi-Regular, AlibabaPuHuiTi;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+      line-height: 20px;
+    }
+  }
+
+  .tableBody {
+    .item {
+      font-size: 14px;
+      font-family: AlibabaPuHuiTi-Regular, AlibabaPuHuiTi;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+      line-height: 20px;
+    }
+  }
+}
+
+.interact {
+  .return {
+    img {
+      cursor: pointer;
+    }
+
+    span {
+      cursor: pointer;
+    }
+  }
+
+  .tableBody .item:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+.blockAreaDetail {
+  .layout();
+  .font();
+  .interact();
+
+  .tableContainer {
+    :global(.ant-collapse) {
+      background-color: transparent;
+      border: none;
+    }
+
+    :global(.ant-collapse-item) {
+      border-bottom: none;
+
+      :global(.ant-collapse-header) {
+        padding: 0;
+      }
+
+      :global(.ant-collapse-content) {
+        background-color: transparent;
+        border-top: none;
+      }
+
+      :global(.ant-collapse-content-box) {
+        padding: 0;
+      }
+    }
+
+    :global(.ant-collapse-item-active .ant-collapse-header) {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+}

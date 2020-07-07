@@ -1,0 +1,50 @@
+@import '../../common.less';
+
+.wrap {
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.3);
+  border: @border_style;
+  box-shadow:0px 30px 4px 0px rgba(0,0,0,0.5),0px -2px 4px 0px rgba(255,255,255,0.3);
+
+  .styled {
+    height: 7px;
+    line-height: 7px;
+    margin:0;
+    padding: 0;
+    text-align: left;
+    margin-top: -1px;
+    > span { display: inline-block; }
+
+    .style1 {
+      width: 96px;
+      height: 7px;
+      background: @primary_color;
+      border: none;
+    }
+    .style2 {
+      width: 4px;
+      height: 7px;
+      margin-left: 4px;
+      background: @primary_color;
+      opacity: 0.7;
+      border: none;
+    }
+    .style3 {
+      width: 4px;
+      height: 7px;
+      margin-left: 4px;
+      background: @primary_color;
+      opacity: 0.5;
+      border: none;
+    }
+    .style4 {
+      width: 4px;
+      height: 7px;
+      margin-left: 4px;
+      background: @primary_color;
+      opacity: 0.3;
+      border: none;
+    }
+  }
+}

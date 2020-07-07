@@ -1,0 +1,57 @@
+.list {
+  width: 368px;
+  // height: 350px;
+  padding: 0;
+  margin: 0 auto;
+  // overflow: auto;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: left;
+  &Item{
+    line-height: 40px;
+    padding-left: 6px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  &Item:nth-child(2n) {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  span{
+    width: 108px;
+    text-align: center;
+  }
+
+  .itemTitle{
+    width: 250px;
+    padding-right: 4px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.chartDiv{
+  position: relative;
+  :global{
+    .ant-select{
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      
+    }
+  }
+}
+
+.masterPanel{
+  :global{
+    .antd-select{
+      position: absolute;
+      top: 80px;
+      right: 20px;
+      
+    }
+  }
+}

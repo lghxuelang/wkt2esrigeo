@@ -1,0 +1,46 @@
+@import '../../../common.less';
+
+.wrap {
+  height: 96px;
+
+  .content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    padding-left: 18px;
+
+    .weather {
+      display: flex;
+      align-items: center;
+
+      .icon {
+        color: @primary_color;
+        height: 44px;
+        width: 44px;
+      }
+
+      .text {
+        font-size: 32px;
+        line-height: 20px;
+        margin-left: 18px;
+        color: @normal_color;
+        font-family: AlibabaPuHuiTi;
+      }
+
+      .text2 {
+        margin-left: 8px;
+        font-size: 16px;
+        line-height: 22px;
+        color: @normal_color;
+      }
+    }
+
+    .date {
+      font-size: 14px;
+      margin-left: 48px;
+      color: @normal_color;
+      font-family: AlibabaPuHuiTi;
+    }
+  }
+}

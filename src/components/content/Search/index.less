@@ -1,0 +1,31 @@
+.wrap {
+  width: 400px;
+  height: 40px;
+  position: absolute;
+  top: 58px;
+  right: 32px;
+  background-color: transparent;
+
+  .inputWrap {
+    position: relative;
+
+    &> img {
+      position: absolute;
+      left: 16px;
+      top: 7px;
+      font-size: 18px;
+      color: #00FFF9;
+      height: 16px;
+      width: 16px;
+    }
+
+    & > :global(.ant-input) {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #00FFF9;
+      padding-left: 48px;
+      color: white;
+    }
+  }
+}
+

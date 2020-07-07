@@ -1,0 +1,90 @@
+.layout {
+  // border: 1px solid red;
+  height: 100%;
+  margin: 0 16px;
+
+//   .barChartContainer,
+//   .stationChoose {
+//     border: 1px solid green;
+//   }
+
+  .stationChoose {
+    margin-top: 24px;
+    height: 83px;
+    padding: 0 16px;
+  }
+
+  .barChartContainer {
+    height: calc(~'100% - 269px'); // 162+83+24
+  }
+
+  //
+//   .stationChoose {
+
+//     p,
+//     .stationSelect {
+//       border: 1px solid blue;
+//     }
+//   }
+
+  .stationChoose {
+    display: flex;
+    align-items: center;
+
+
+    p {
+      margin: 0;
+    }
+
+    .stationSelect {
+      width: 96px;
+      height: 32px;
+      margin-left: 16px;
+    }
+  }
+}
+
+.font {
+  .stationChoose {
+    p {
+      font-size: 14px;
+      font-family: AlibabaPuHuiTi-Regular, AlibabaPuHuiTi;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 1);
+      line-height: 20px;
+    }
+
+    .stationSelect {
+      :global(.ant-select-selection-item) {
+        font-size: 12px;
+        font-family: AlibabaPuHuiTi-Regular, AlibabaPuHuiTi;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 1);
+        // line-height: 17px;
+      }
+
+      :global(.ant-select-selector) {
+        background-color: transparent;
+      }
+
+      :global(.ant-select-arrow) {
+        color: white;
+      }
+
+      :global(.ant-select-item-option-content) {
+        font-size: 12px;
+        font-family: AlibabaPuHuiTi-Regular, AlibabaPuHuiTi;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 1);
+        line-height: 17px;
+      }
+
+    }
+  }
+}
+
+.heatStation {
+
+  .layout();
+  .font();
+}

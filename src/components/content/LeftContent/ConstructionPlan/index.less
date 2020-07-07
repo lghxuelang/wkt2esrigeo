@@ -1,0 +1,32 @@
+@import '../../../common';
+
+.wrap {
+  margin-top: 32px;
+  height: calc(100% - 128px);
+
+  .guide {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 16px;
+    span {
+      width: 123px;
+      padding: 8px 0;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 1);
+      border-bottom: 2px rgba(255, 255, 255, 0.5) solid;
+      &:hover {
+        color: rgba(0, 255, 249, 1);
+        border-bottom: 2px rgba(0, 255, 249, 1) solid;
+      }
+    }
+    .active {
+      color: rgba(0, 255, 249, 1);
+      border-bottom: 2px rgba(0, 255, 249, 1) solid;
+    }
+  }
+
+
+}

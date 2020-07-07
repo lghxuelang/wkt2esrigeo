@@ -1,0 +1,97 @@
+[
+  {
+    "title": "精细模型",
+    "children": [
+      {
+        "title": "柏林建筑",
+        "type": "SceneLayer",
+        "url": "https://tiles.arcgis.com/tiles/cFEFS0EWrhfDeVw9/arcgis/rest/services/Berlin_buildings/SceneServer"
+      }
+    ]
+  },
+  {
+    "title": "点云模型",
+    "children": [
+      {
+        "title": "dddd",
+        "type": "feature",
+        "url": "https://portal.ehjedu.cn/server/rest/services/Hosted/polygon0305/FeatureServer/0"
+      }
+    ]
+  },
+  {
+    "title": "倾斜摄影",
+    "children": [
+      {
+        "title": "沟壑",
+        "type": "mesh",
+        "url": "https://tiles.arcgis.com/tiles/FQD0rKU8X5sAQfh8/arcgis/rest/services/VRICON_Yosemite_Sample_Integrated_Mesh_scene_layer/SceneServer"
+      }
+    ]
+  },
+  {
+    "title": "BIM模型",
+    "children": [
+      {
+        "title": "碰撞检测模型1",
+        "type": "building",
+        "url": "https://smartcim.arcgisonline.cn/server/rest/services/Hosted/TestBuilding1_v2/SceneServer"
+      },
+      {
+        "title": "碰撞检测模型2",
+        "type": "building",
+        "url": "https://smartcim.arcgisonline.cn/server/rest/services/Hosted/TestBuilding2_v1/SceneServer"
+      }
+    ]
+  },
+  {
+    "title": "高精DEM",
+    "children": [
+      {
+        "title": "dddd",
+        "type": "feature",
+        "url": "https://portal.ehjedu.cn/server/rest/services/Hosted/polygon0305/FeatureServer/0"
+      }
+    ]
+  },
+  {
+    "title": "航空影像",
+    "children": [
+      {
+        "title": "dddd",
+        "type": "feature",
+        "url": "https://portal.ehjedu.cn/server/rest/services/Hosted/polygon0305/FeatureServer/0"
+      }
+    ]
+  },
+  {
+    "title": "地下管线及附属设施",
+    "children": [
+      {
+        "title": "dddd",
+        "type": "feature",
+        "url": "https://portal.ehjedu.cn/server/rest/services/Hosted/polygon0305/FeatureServer/0"
+      }
+    ]
+  },
+  {
+    "title": "基本服务",
+    "children": [
+      {
+        "title": "河流",
+        "type": "feature",
+        "url": "https://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/Water_bodies/FeatureServer"
+      },
+      {
+        "title": "伦敦兴趣点",
+        "type": "feature",
+        "url": "http://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/LyonPointsOfInterest/FeatureServer"
+      },
+      {
+        "title": "地铁线",
+        "type": "feature",
+        "url": "http://services.arcgis.com/V6ZHFr6zdgNZuVG0/arcgis/rest/services/subway_tcl_stations_lines_wgs84/FeatureServer/0"
+      }
+    ]
+  }
+]
